@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    /*Converting the body into grid*/
+    display: grid; 
+    /* default it create rows and add content  */
+    /* two calls one for side and one for main */
+    grid-template-columns: 30% auto;
+    /* defining 1st row as header 2nd body and 3rd footer */
+    /* We basically created 6 cells intotal */
+    grid-template-rows: 60px auto 60px;
+    /* giving each cell a name like an area  */
+    grid-template-areas: "hd hd" "sb bd" "ft ft" ;
+    /* assigining them indivisually */
+
+}
+
+header,
+aside,
+main,
+footer {
+    padding: 16px;
+    text-align: center;
+}
+
+header {
+    background: #521751;
+    /* header goes in here */
+    grid-area: hd;
+}
+
+aside {
+    background: #fa923f;
+    grid-area: sb;
+}
+
+footer {
+    background: black;
+    grid-area: ft;
+}
+main{
+    grid-area: bd;
+}
+
+.navigation-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* for header and footer at left */
+    display: flex;
+    flex-direction: row;
+    /* adding them in the center  */
+    justify-content: center;
+    align-items: center;
+    /* for full space */
+    height: 100%;
+    /* giving a flex container a with in center 
+    or  margin on nav item*/
+
+}
+
+/* adding margins to indivisual items is easier for spacing  */
+.navigation-item{
+    margin: 0 10px;
+}
+
+.navigation-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation-item a:hover,
+.navigation-item a:active {
+    color: #fa923f;
+}
